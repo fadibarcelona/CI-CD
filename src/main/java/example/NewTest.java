@@ -20,7 +20,7 @@ public class NewTest {
 	    	  
 	    	  @BeforeTest
 	    	  public void beforeTest() {
-	    			System.setProperty("browser.gecko.driver", System.getProperty("user.dir")+"/geckodriver");
+	    			System.setProperty("browser.gecko.driver", System.getProperty("/var/lib/jenkins/workspace/servicenow/")+"/geckodriver");
 //	    	   System.setProperty("webdriver.gecko.driver", "C:\\Users\\taha.patel\\eclipse-workspace2\\SampleProject\\geckodriver.exe");
 	    	   driver = new FirefoxDriver();
 	    	   
