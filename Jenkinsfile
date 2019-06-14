@@ -19,11 +19,14 @@ pipeline {
 			
             stage('Running Test') {
             agent { label 'master' }
-                steps { 
-             
+                steps {
+			timeout(45) {
+             wrap([$class: 'Xvfb', additionalOptions: '', assignedLabels: '', autoDisplayName: true, debug: true, displayNameOffset: 0, installationName: 'XVFB', parallelBuild: true, screen: '1024x758x24', timeout: 25]) {
                     sh 'chmod 777 /var/lib/jenkins/workspace/Service-Now/geckodriver && mvn install '
                     
             }
+		}
+	    }
             }
 	}
 			 post {
