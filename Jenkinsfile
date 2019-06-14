@@ -28,10 +28,11 @@ pipeline {
 	}
 			 post {
     always {
+	    node('master') {
       sh '''curl --user admin:Rcyber!@#4  --header "Content-Type:application/json"  --header "Accept: application/json"  --request POST  --data '{"short_description":"Incident Reported using Jenkins and Curl", "description":"This build has been processed using Jenkins. You can find out rest of the details here: '$BUILD_URL' " }' https://dev49841.service-now.com//api/now/table/incident'''
     }
   }
-		 
+			 }	 
             
            
         
