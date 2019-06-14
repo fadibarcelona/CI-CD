@@ -12,7 +12,7 @@ pipeline {
             agent { label 'master' }
                 steps { 
              echo "Building Image in Utility Container"
-                    sh 'chmod 777 geckodriver'
+                    sh 'chmod 777 /var/lib/jenkins/workspace/Service-Now/geckodriver'
               
             }
             }
@@ -21,7 +21,7 @@ pipeline {
             agent { label 'master' }
                 steps { 
              
-                    sh 'mvn install '
+                    sh 'chmod 777 /var/lib/jenkins/workspace/Service-Now/geckodriver && mvn install '
                     
             }
             }
