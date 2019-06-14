@@ -2,7 +2,7 @@ pipeline {
     agent none
         stages {
         stage('checking out') {
-            agent { label 'wcsv9' }
+            agent { label 'master' }
             steps { 
              echo "Checking out Code"
               
