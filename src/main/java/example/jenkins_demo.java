@@ -1,26 +1,20 @@
-package example;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class Selenium {
+public static void main(String[] args) {
+SSystem.setProperty("browser.gecko.driver", System.getProperty("/var/lib/jenkins/workspace/servicenow/")+"/geckodriver");
+WebDriver driver = new FirefoxDriver();
 
-public class jenkins_demo
-{
-
-@Test
-publicvoidtestgooglrsearch(){
-
-WebDriver driver = newFirefoxDriver();
-//it will open the goggle page
-driver.get("http://google.in"); 
-//we expect the title “Google “ should be present 
-String Expectedtitle = "Google";
-//it will fetch the actual title 
-String Actualtitle = driver.getTitle();
-System.out.println("Before Assetion " + Expectedtitle + Actualtitle);
-//it will compare actual title and expected title
-Assert.assertEquals(Actualtitle, Expectedtitle);
-//print out the result
-System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
- }
+String baseUrl = “https://experitest.com/free-trial/”;
+String expectedTitle = “Free trial”;
+String actualTitle = “”;
+driver.get(baseUrl);
+actualTitle = driver.getTitle();
+if (actualTitle.contentEquals(expectedTitle)){
+System.out.println(“TEST PASSED!”);
+} else {
+System.out.println(“TEST FAILED”);
+}
+driver.close();
+}
 }
