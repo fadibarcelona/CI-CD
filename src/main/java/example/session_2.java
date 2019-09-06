@@ -1,4 +1,4 @@
-package session_2;
+package example;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
