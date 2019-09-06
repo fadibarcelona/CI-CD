@@ -3,9 +3,9 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <!--<class name="example.NewTest"/>
-      <class name="example.RemoteTest"/> -->
-      <class name="example.session_2"/>
+      <class name="example.NewTest"/>
+     <!-- <class name="example.RemoteTest"/> 
+      <class name="example.session_2"/>-->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
