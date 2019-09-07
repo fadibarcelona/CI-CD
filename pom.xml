@@ -15,57 +15,72 @@
         </configuration>
       </plugin>
       <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-surefire-plugin</artifactId>
-		<version>2.18.1</version>
-		<configuration>
-			<suiteXmlFiles>
-				<!-- TestNG suite XML files -->
-				<suiteXmlFile>testng.xml</suiteXmlFile>
-			</suiteXmlFiles>
-		 	<testFailureIgnore>false</testFailureIgnore>
-		 	                <!--only for 1.3.* TestNG adapters. Since 1.4.0.RC4, the listener adds via ServiceLoader-->
-		</configuration>
-		</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                        <suiteXmlFiles>
+                                <!-- TestNG suite XML files -->
+                                <suiteXmlFile>testng.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                        <testFailureIgnore>false</testFailureIgnore>
+                                        <!--only for 1.3.* TestNG adapters. Since 1.4.0.RC4, the listener adds via ServiceLoader-->
+                </configuration>
+                </plugin>
+ <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>example.Selenium</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
     </plugins>
   </build>
-	  <dependencies>
-				<dependency>
-				    <groupId>org.seleniumhq.selenium</groupId>
-				    <artifactId>selenium-java</artifactId>
-				    <version>3.5.3</version>
-				</dependency>
-				<dependency>
-			  		<groupId>org.apache.logging.log4j</groupId>
-			  		<artifactId>log4j-core</artifactId>
-			  		<version>2.8.2</version>
-			  	</dependency>
-			  	<dependency>
-			  		<groupId>org.apache.poi</groupId>
-			  		<artifactId>poi</artifactId>
-			  		<version>3.16</version>
-			  	</dependency>
-			  	<dependency>
-			  		<groupId>org.apache.maven.surefire</groupId>
-			  		<artifactId>surefire-api</artifactId>
-			  		<version>2.20</version>
-			  	</dependency>
-			  	<dependency>
-			  		<groupId>org.testng</groupId>
-			  		<artifactId>testng</artifactId>
-			  		<version>6.11</version>
-			  		
-			  	</dependency>
-			  	<dependency>
-			    <groupId>com.aventstack</groupId>
-			    <artifactId>extentreports</artifactId>
-			    <version>3.0.6</version>
-				</dependency>
-				<dependency>
-			    <groupId>com.sikulix</groupId>
-			    <artifactId>sikulixapi</artifactId>
-			    <version>1.1.0</version>
-				</dependency>
-			
-		</dependencies>
+          <dependencies>
+                                <dependency>
+                                    <groupId>org.seleniumhq.selenium</groupId>
+                                    <artifactId>selenium-java</artifactId>
+                                    <version>3.5.3</version>
+                                </dependency>
+                                <dependency>
+                                        <groupId>org.apache.logging.log4j</groupId>
+                                        <artifactId>log4j-core</artifactId>
+                                        <version>2.8.2</version>
+                                </dependency>
+                                <dependency>
+                                        <groupId>org.apache.poi</groupId>
+                                        <artifactId>poi</artifactId>
+                                        <version>3.16</version>
+                                </dependency>
+                                <dependency>
+                                        <groupId>org.apache.maven.surefire</groupId>
+                                        <artifactId>surefire-api</artifactId>
+                                        <version>2.20</version>
+                                </dependency>
+                                <dependency>
+                                        <groupId>org.testng</groupId>
+                                        <artifactId>testng</artifactId>
+                                        <version>6.11</version>
+
+                                </dependency>
+                                <dependency>
+                            <groupId>com.aventstack</groupId>
+                            <artifactId>extentreports</artifactId>
+                            <version>3.0.6</version>
+                                </dependency>
+                                <dependency>
+                            <groupId>com.sikulix</groupId>
+                            <artifactId>sikulixapi</artifactId>
+                            <version>1.1.0</version>
+                                </dependency>
+
+                </dependencies>
 </project>
